@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: lightskyblue;
+        }
+        .sidebar {
+            border-right: 1px solid red;
+            height: 600px;
+            width: 300px;
+            visibility: hidden;
+            position: fixed;
+            background-color: lightgray;
+        }
+        .menu-element {
+            padding: 5px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            cursor: pointer;
+            gap: 10px;
+        }
+        .menu-element:hover {
+            background-color: lightcoral;
+        }
+        .menu-icon {
+            font-size: 30px;
+            color: darkcyan;
+        }
+        .menu-text {
+            text-decoration: none;
+            color: black;
+            margin-left: 5px;
+        }
+        
+        .close-menu {
+            text-align: right;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .content {
+            margin-left: 150px;
+            padding: 20px;
+        }
+        .hamburger {
+            margin-left: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <i class="fa-solid fa-bars hamburger" onclick="openSidebar()" id="hamburger-menu"></i>
+    <div class="sidebar" id="sidebar">
+        <div class="close-menu" onclick="closeSidebar()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="menu-element">
+            <i class="fa-solid fa-house menu-icon"></i>
+            <a href="#" class="menu-text">Home</a>
+        </div>
+        <div class="menu-element">
+            <i class="fa-solid fa-user menu-icon"></i>
+            <a href="#" class="menu-text">About</a>
+        </div>
+        <div class="menu-element">
+            <i class="fa-solid fa-pen menu-icon"></i>
+            <a href="#" class="menu-text">Register</a>
+        </div>
+        <div class="menu-element">
+            <i class="fa-solid fa-circle-left menu-icon"></i>
+            <a href="#" class="menu-text">Login</a>
+        </div>
+        <div class="menu-element">
+            <i class="fa-solid fa-sign-out-alt menu-icon"></i>
+            <a href="#" class="menu-text">Logout</a>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a9ad840a6f.js" crossorigin="anonymous"></script>
+    <script>
+        function openSidebar() {
+            const sidebarElement = document.getElementById('sidebar');
+            sidebarElement.style.visibility = 'visible';
+
+            const hamburgerMenuElement = document.getElementById('hamburger-menu');
+            hamburgerMenuElement.style.display = 'none';
+        }
+
+        function closeSidebar() {
+            const sidebarElement = document.getElementById('sidebar');
+            sidebarElement.style.visibility = 'hidden';
+
+            const hamburgerMenuElement = document.getElementById('hamburger-menu');
+            hamburgerMenuElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
